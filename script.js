@@ -137,3 +137,20 @@ const psromise1 = new psromise ((resolve, reject) => {
     console.log(value);
 })
 
+// async and await
+
+function saySomething (x){
+    return new Promise (resolve => {
+        setTimeout(() => {
+            resolve("something" + x);
+        }, 2000);
+    });
+}
+
+async function talk(x){
+    const words = await saySomething(x);
+    console.log(words);
+}
+talk(2);
+talk(4);
+talk(8);
